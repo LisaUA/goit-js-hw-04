@@ -1,9 +1,12 @@
-function slugify(title) {
-  title = title.toLowerCase();
-  return title.replaceAll(" ", "-");
+function isEnoughCapacity(products, containerSize) {
+let sumProducts = 0;
+const values = Object.values(products);
+for (let value of values) {
+  sumProducts += value
 }
-
-console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
-console.log(slugify("English for developer")); // "english-for-developer"
-console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
+if (sumProducts <= containerSize) {
+  return Boolean(true);
+} else {
+  return Boolean(false);
+}
+}
